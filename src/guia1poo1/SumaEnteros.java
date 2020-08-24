@@ -9,12 +9,26 @@ public class SumaEnteros {
         int numero2;
         int suma;
         primernumero = JOptionPane.showInputDialog("Digite el primer numero");
-        segundonumero = JOptionPane.showInputDialog("Digite el segundo numero");
         numero1 = Integer.parseInt(primernumero);
-        numero2 = Integer.parseInt(segundonumero);
-        suma = numero1 + numero2;
-        JOptionPane.showMessageDialog(null, "La suma es:" +
-        suma,"Resultado",JOptionPane.PLAIN_MESSAGE);
+        if(numero1>0)
+        {
+            segundonumero = JOptionPane.showInputDialog("Digite el segundo numero");
+            numero2 = Integer.parseInt(segundonumero);
+            if(numero2>0)
+            {
+                suma = numero1 + numero2;
+                JOptionPane.showMessageDialog(null, "La suma es: " +
+                suma,"Resultado",JOptionPane.PLAIN_MESSAGE);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Error, los numeros deben ser positivos" , "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Error, los numeros deben ser positivos" , "Error", JOptionPane.ERROR_MESSAGE);
+        }
         System.exit(0);
     }
 }
